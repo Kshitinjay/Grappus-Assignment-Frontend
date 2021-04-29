@@ -68,7 +68,7 @@ const Contact = ({ userName, userContact, handleDelete, handleUpdate, id }) => {
               onChange={handleNewChange}
             />
             <button
-              className="btn btn-warning"
+              className="btn btn-warning mt-3"
               onClick={() => {
                 handleUpdate(id, detailsUpdate);
                 setFlag(!flag);
