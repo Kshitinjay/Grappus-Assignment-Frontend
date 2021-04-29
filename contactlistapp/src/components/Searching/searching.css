@@ -1,0 +1,19 @@
+.form-Container{
+    margin: 2% auto;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#name{
+    width: 200px!important;
+    text-transform: capitalize;
+    margin: 2%;
+}
+#num{
+    width: 150px!important;
+}
+button{
+    height: 40px;
+}
