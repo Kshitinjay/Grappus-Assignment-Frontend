@@ -24,9 +24,9 @@ const Searching = ({ handleChange, handleSubmit,handleSort}) => {
       <button type="button" className="btn btn-danger  ms-2" onClick={handleSubmit}>
         Add Contact
       </button>
-      <button  type="button" className="btn btn-danger ms-2" onClick={handleSort}>
+      {/* <button  type="button" className="btn btn-danger ms-2" onClick={handleSort}>
         Sort
-      </button>
+      </button> */}
     </div>
   );
 };

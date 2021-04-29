@@ -45,40 +45,44 @@ function App() {
     setData(newData);
   };
 
-  const handleSort = () => {
-    console.log("Sorted");
-    const appStateCopy = [...data];
-    appStateCopy.sort((a, b) =>
-      a.userName.toLowerCase() < b.userName.toLowerCase() ? -1 : 1
-    );
-    setData(appStateCopy);
-  };
+  // const handleSort = () => {
+  //   console.log("Sorted");
+  //   const appStateCopy = [...data];
+  //   appStateCopy.sort((a, b) =>
+  //     a.userName.toLowerCase() < b.userName.toLowerCase() ? -1 : 1
+  //   );
+  //   setData(appStateCopy);
+  // };
 
-  const handleUpdate = (idx,item)=>{
+  const handleUpdate = (idx, item) => {
     data[idx] = item;
     setData([...data]);
-  }
+  };
   return (
     <div className="App">
       <h1>Contact List App</h1>
       <Searching
         handleChange={handleChange}
         handleSubmit={handleSubmit}
-        handleSort={handleSort}
+        // handleSort={handleSort}
       />
       <div id="contactContainer">
-        {data.map((item, id) => {
-          return (
-            <Contact
-              key={id}
-              userName={item.userName}
-              userContact={item.userContact}
-              handleDelete={handleDelete}
-              handleUpdate={handleUpdate}
-              id={id}
-            />
-          );
-        })}
+        {data
+          .sort((a, b) =>
+            a.userName.toLowerCase() < b.userName.toLowerCase() ? -1 : 1
+          )
+          .map((item, id) => {
+            return (
+              <Contact
+                key={id}
+                userName={item.userName}
+                userContact={item.userContact}
+                handleDelete={handleDelete}
+                handleUpdate={handleUpdate}
+                id={id}
+              />
+            );
+          })}
       </div>
     </div>
   );
