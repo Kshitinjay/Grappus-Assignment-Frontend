@@ -54,6 +54,10 @@ function App() {
     setData(appStateCopy);
   };
 
+  const handleUpdate = (idx,item)=>{
+    data[idx] = item;
+    setData([...data]);
+  }
   return (
     <div className="App">
       <h1>Contact List App</h1>
@@ -70,6 +74,7 @@ function App() {
               userName={item.userName}
               userContact={item.userContact}
               handleDelete={handleDelete}
+              handleUpdate={handleUpdate}
               id={id}
             />
           );
